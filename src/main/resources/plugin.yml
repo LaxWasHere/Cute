@@ -1,0 +1,6 @@
+name: Cute
+version: 4.20
+author: LaxWasHere
+main: net.poweredbyscience.cute.Cute
+commands:
+  cute:

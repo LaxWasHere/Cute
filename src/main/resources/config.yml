@@ -1,0 +1,22 @@
+format:
+  - '&7&8&m-------------------------------------------------'
+  - '&bHere is your cute picture'
+  - '&b%link%'
+  - '&7&8&m-------------------------------------------------'
+NoPerm: '&cNo permission to dispense cute gif'
+CustomCommands:
+  cats:
+    query: 'cat'
+    permission: 'cute.cats'
+  dogs:
+    query: 'dog'
+    permission: 'cute.dogs'
+  goats:
+    query: 'goat'
+    permission: 'cute.goats'
+  puppies:
+    query: 'puppies'
+    permission: 'cute.puppies'
+  taco:
+    query: 'tacos'
+    permission: 'cute.tacos'
