@@ -1,6 +1,7 @@
 package net.poweredbyscience.cute;
 
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -32,9 +33,13 @@ public class Cute extends JavaPlugin implements Listener {
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent ev) { //sue me
         String command = ev.getMessage().replace("/","");
-        if (commands.containsKey(command) && ev.getPlayer().hasPermission(commands.get(command).split(":")[1])) {
-            Dispenser.dispenseCuteness(AnimalRescue.getCuteShit(String.join("+", commands.get(command).split(":")[0])), ev.getPlayer());
+        if (commands.containsKey(command)) {
             ev.setCancelled(true);
+            if (ev.getPlayer().hasPermission(commands.get(command).split(":")[1])) {
+                Dispenser.dispenseCuteness(AnimalRescue.getCuteShit(String.join("+", commands.get(command).split(":")[0])), ev.getPlayer());
+            } else {
+                ev.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', Cute.instance.getConfig().getString("NoPerm")));
+            }
         }
     }
 

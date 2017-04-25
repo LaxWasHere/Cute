@@ -25,6 +25,8 @@ public class CuteCuteCommand implements CommandExecutor {
             if (args.length >= 1) {
                 Dispenser.dispenseCuteness(AnimalRescue.getCuteShit(String.join("+", args)), sender);
             }
+        } else {
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Cute.instance.getConfig().getString("NoPerm")));
         }
         return false;
     }
