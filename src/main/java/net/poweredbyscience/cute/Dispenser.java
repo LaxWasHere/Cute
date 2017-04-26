@@ -9,15 +9,10 @@ import org.bukkit.entity.Player;
  */
 public class Dispenser {
 
-    public static void dispenseCuteness(String url, Player p) {
-        for (String s : Cute.instance.getConfig().getStringList("format")) {
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&', s.replace("%link%", url)));
-        }
-    }
-
     public static void dispenseCuteness(String url, CommandSender p) {
         for (String s : Cute.instance.getConfig().getStringList("format")) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', s.replace("%link%", url)));
         }
     }
+    
 }
